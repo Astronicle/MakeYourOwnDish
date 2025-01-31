@@ -5,6 +5,8 @@
 }
 
 
+/* Navbar */
+
 .navbar {
     border-style: solid;
     display: flex;
@@ -20,6 +22,7 @@
 .logoContainer {
     display: flex;
     align-items: center;
+    font-family: "Playwrite IN",sans-serif;
 }
 
 .navLinks {
