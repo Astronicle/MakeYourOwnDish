@@ -40,9 +40,20 @@
 .ingredientsAdd {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.ingredientsAdd > button {
+.ingredientsForm > button {
     background-color: black;
     color: white;
+}
+
+.ingredientHeader {
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.listContainer {
+    position: relative;
+    left: 3%;
 }
