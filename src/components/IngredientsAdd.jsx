@@ -1,18 +1,16 @@
 import './components.css'
-import React from "react"
+import {useState} from "react"
 
 function IngredientsAdd() {
 
-    const [ingredientList, setIngredientList] = React.useState([])
+    const [ingredientList, setIngredientList] = useState([])
 
-    function handleSubmit(event) {
-        event.preventDefault()          //prevents refreshing of page
-        const formData = new FormData(event.currentTarget)
+    function addIngredient(formData) {
         const ingredientInput = formData.get("ingredient")
         setIngredientList(prevIngredientList => [...prevIngredientList, ingredientInput])
     }
 
-    const ingredientListJsx = ingredientList.map(x => <li>{x}</li>)
+    const ingredientListJsx = ingredientList.map((x, _) => <li key={_}>{x}</li>)
 
     function checkAvailability() {
         if (ingredientList.length!=0)
@@ -25,7 +23,7 @@ function IngredientsAdd() {
         <>
             <div className='ingredientsAdd'>
                 <div>Add Ingredients</div>
-                <form onSubmit={handleSubmit} className='ingredientsForm'>
+                <form action={addIngredient} className='ingredientsForm'>
                     <input type='text'
                     placeholder='Add your ingredients here...'
                     name='ingredient'></input>
