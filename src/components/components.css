@@ -27,9 +27,27 @@
 }
 
 .navLinks {
-    border-style: solid;
     display: flex;
     justify-content: center;
+    height: 5rem;
+    align-items: center;
+}
+
+.changeColor{
+    height: 5rem;
+    align-content: center;
+    width: 5rem;
+    text-align: center;
+}
+
+.changeColor:hover{
+    transition: ease-in 0.3s;
+    color: white;
+    background-color: black;
+}
+
+.searchBar{
+    margin-left: 2rem;
 }
 
 .logo {

@@ -1,11 +1,9 @@
-import { use } from 'react'
 import './components.css'
 import {useState} from "react"
 
 function IngredientsAdd() {
 
     const [ingredientList, setIngredientList] = useState([])
-    const [recipeShown, setRecipeShown] = useState(false)
 
     function addIngredient(formData) {
         const ingredientInput = formData.get("ingredient")

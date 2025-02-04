@@ -10,11 +10,11 @@ function Navbar() {
                     <h1>Make Your Own Dish</h1>
                 </div>
                 <div className='navLinks'>
-                    <a href='#'>Home</a>
-                    <a href='#'>About</a>
-                    <a href='#'>Sign Up</a>
-                    <a href='#'>Login</a>
-                    <input type='text' placeholder='Search'></input>
+                    <a href='#' className='changeColor'>Home</a>
+                    <a href='#' className='changeColor'>About</a>
+                    <a href='#' className='changeColor'>Sign Up</a>
+                    <a href='#' className='changeColor'>Login</a>
+                    <input type='text' placeholder='Search' className='searchBar'></input>
                 </div>
             </nav>
             <br></br>
