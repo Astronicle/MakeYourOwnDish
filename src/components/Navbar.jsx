@@ -14,7 +14,7 @@ function Navbar() {
                     <a href='#' className='changeColor'>About</a>
                     <a href='#' className='changeColor'>Sign Up</a>
                     <a href='#' className='changeColor'>Login</a>
-                    <input type='text' placeholder='Search' className='searchBar'></input>
+                    <input type='text' placeholder='Search' className='searchBar' name='SearchBar'></input>
                 </div>
             </nav>
             <br></br>

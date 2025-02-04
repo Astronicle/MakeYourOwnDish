@@ -1,9 +1,12 @@
 import './components.css'
-import {useState} from "react"
 
-function IngredientsAdd() {
+function IngredientsAdd(props) {
 
-    const [ingredientList, setIngredientList] = useState([])
+    const ingredientList = props.list
+    const setIngredientList = props.listFunc
+
+    const getRecipe = props.toggleRecipe
+    const setGetRecipe = props.toggleRecipeFunc
 
     function addIngredient(formData) {
         const ingredientInput = formData.get("ingredient")
@@ -20,15 +23,20 @@ function IngredientsAdd() {
             return <div className='ingredientHeader2'>Add ingredients to start generating recipes!</div>
     }
 
+    function toggleGetRecipeState() {
+        setGetRecipe(prev => !prev)
+    }
+
     function checkRecipeCount() {
-        if (ingredientList.length>2)
+        if (ingredientList.length>2){
             return <div className='recipeContainer1'>
                         <div className='getRecipeDescriptionContainer'>
                             <h3>Ready for a recipe?</h3>
                             <p>Generate a recipe from the entered list of ingredients.</p>
                         </div>
-                        <button>Get Recipe</button>
+                        <button onClick={toggleGetRecipeState}>Get Recipe</button>
                     </div>
+                    }
         else if(ingredientList.length>0)
             return <div className='recipeContainer2'>
                         <p>3 items required to generate, add them in!</p>
