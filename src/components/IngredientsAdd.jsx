@@ -24,7 +24,7 @@ function IngredientsAdd(props) {
     }
 
     function toggleGetRecipeState() {
-        setGetRecipe(prev => !prev)
+        setGetRecipe(prev => true)
     }
 
     function checkRecipeCount() {

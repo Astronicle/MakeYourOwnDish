@@ -1,4 +1,7 @@
 import './components.css'
+import { getRecipeFromMistral } from '../ai'
+import Markdown from 'react-markdown'
+import { useState } from "react"
 
 function Recipe(props) {
 
@@ -8,8 +11,18 @@ function Recipe(props) {
     const getRecipe = props.toggleRecipe
     const setGetRecipe = props.toggleRecipeFunc
 
-    if(getRecipe)
-    return (<h1>RECIPE</h1>)
+    const [generatedRecipe, setGeneratedRecipe] = useState("")
+
+    async function generateRecipe() {
+        const recipe = await getRecipeFromMistral(ingredientList)
+        setGeneratedRecipe(prev => recipe)
+        return setGeneratedRecipe
+    }
+
+    if(getRecipe) {
+        generateRecipe()
+        return (<div>{generateRecipe()}</div>)
+    }
 }
 
 export default Recipe
