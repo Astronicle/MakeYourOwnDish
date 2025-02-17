@@ -16,12 +16,12 @@ function Recipe(props) {
     async function generateRecipe() {
         const recipe = await getRecipeFromMistral(ingredientList)
         setGeneratedRecipe(prev => recipe)
-        return setGeneratedRecipe
+       
     }
 
     if(getRecipe) {
         generateRecipe()
-        return (<div>{generateRecipe()}</div>)
+        return (generatedRecipe && <div>{generatedRecipe}</div>)
     }
 }
 
